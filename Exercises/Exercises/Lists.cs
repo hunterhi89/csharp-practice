@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Exercises
+namespace ArraysLists
 {
     public class Lists
     {
-        static void Main(string[] args)
-        {
+        //static void Main(string[] args)
+        //{
             //var numbers = new List<int>() { 1, 2, 3, 4 };
             //numbers.Add(1);
             //numbers.AddRange(new int[3] { 5, 6, 7 });
@@ -114,44 +114,44 @@ namespace Exercises
             //foreach (var number in uniques)
             //    Console.WriteLine(number);
 
-            string[] elements;
-            while (true)
-            {
-                Console.WriteLine("Enter a list of comma-separated numbers: ");
-                var input = Console.ReadLine();
+            //string[] elements;
+            //while (true)
+            //{
+            //    Console.WriteLine("Enter a list of comma-separated numbers: ");
+            //    var input = Console.ReadLine();
+            //
+            //    if(!String.IsNullOrWhiteSpace(input))
+            //   {
+            //        elements = input.Split(',');
+            //        if (elements.Length >= 5)
+            //            break;
+            //    }
 
-                if(!String.IsNullOrWhiteSpace(input))
-                {
-                    elements = input.Split(',');
-                    if (elements.Length >= 5)
-                        break;
-                }
+            //    Console.WriteLine("Invalid list!");
+            //}
 
-                Console.WriteLine("Invalid list!");
-            }
+            //var numbers = new List<int>();
+            //foreach (var number in elements)
+            //    numbers.Add(Convert.ToInt32(number));
 
-            var numbers = new List<int>();
-            foreach (var number in elements)
-                numbers.Add(Convert.ToInt32(number));
+            //var smallests = new List<int>();
+            //while (smallests.Count < 3)
+            //{
+            //    var min = numbers[0];
+            //    foreach (var number in numbers)
+            //    {
+            //        if (number < min)
+            //            min = number;
+            //    }
+            //
+            //    smallests.Add(min);
+            //
+            //    numbers.Remove(min);
+            //}
 
-            var smallests = new List<int>();
-            while (smallests.Count < 3)
-            {
-                var min = numbers[0];
-                foreach (var number in numbers)
-                {
-                    if (number < min)
-                        min = number;
-                }
-
-                smallests.Add(min);
-
-                numbers.Remove(min);
-            }
-
-            Console.WriteLine("The 3 smallest numbers are: ");
-            foreach (var number in smallests)
-                Console.WriteLine(number);
-        }
+            //Console.WriteLine("The 3 smallest numbers are: ");
+            //foreach (var number in smallests)
+            //    Console.WriteLine(number);
+        //}
     }
 }

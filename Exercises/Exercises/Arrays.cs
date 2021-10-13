@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercises
+namespace ArraysLists
 {
     public class Arrays
     {
