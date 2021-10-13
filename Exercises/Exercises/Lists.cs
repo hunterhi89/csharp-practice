@@ -68,22 +68,90 @@ namespace Exercises
             //Console.WriteLine("Reversed name: " + reversed);
 
 
-            var numbers = new List<int>();
+            //var numbers = new List<int>();
 
-            while (numbers.Count < 5)
+            //while (numbers.Count < 5)
+            //{
+            //    Console.WriteLine("Enter a number: ");
+            //    var number = Convert.ToInt32(Console.ReadLine());
+            //    if (numbers.Contains(number))
+            //    {
+            //        Console.WriteLine("You've already entered " + number);
+            //        continue;
+            //    }
+
+            //    numbers.Add(number);
+            //}
+
+            //numbers.Sort();
+
+            //foreach (var number in numbers)
+            //    Console.WriteLine(number);
+
+            //var numbers = new List<int>();
+
+            //while (true)
+            //{
+            //    Console.WriteLine("Enter a number or type 'Quit' to exit: ");
+            //    var input = Console.ReadLine();
+
+            //    if (input.ToLower() == "quit")
+            //        break;
+
+            //    numbers.Add(Convert.ToInt32(input));
+
+            //}
+
+
+            //var uniques = new List<int>();
+            //foreach (var number in numbers)
+            //{
+            //    if (!uniques.Contains(number))
+            //        uniques.Add(number);
+            //}
+
+            //Console.WriteLine("Unique numbers: ");
+            //foreach (var number in uniques)
+            //    Console.WriteLine(number);
+
+            string[] elements;
+            while (true)
             {
-                Console.WriteLine("Enter a number: ");
-                var number = Convert.ToInt32(Console.ReadLine());
-                if (numbers.Contains(number))
+                Console.WriteLine("Enter a list of comma-separated numbers: ");
+                var input = Console.ReadLine();
+
+                if(!String.IsNullOrWhiteSpace(input))
                 {
-                    Console.WriteLine("You've already entered " + number);
-                    continue;
+                    elements = input.Split(',');
+                    if (elements.Length >= 5)
+                        break;
                 }
 
-                numbers.Add(number);
+                Console.WriteLine("Invalid list!");
             }
 
+            var numbers = new List<int>();
+            foreach (var number in elements)
+                numbers.Add(Convert.ToInt32(number));
 
+            var smallests = new List<int>();
+            while (smallests.Count < 3)
+            {
+                var min = numbers[0];
+                foreach (var number in numbers)
+                {
+                    if (number < min)
+                        min = number;
+                }
+
+                smallests.Add(min);
+
+                numbers.Remove(min);
+            }
+
+            Console.WriteLine("The 3 smallest numbers are: ");
+            foreach (var number in smallests)
+                Console.WriteLine(number);
         }
     }
 }
